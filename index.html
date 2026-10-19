@@ -6,20 +6,43 @@
     <title>Paslon 01 - Muhamad Pasya Komara & Keishya Putri Aurelia | Pilketos Puspita</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-blue-600 selection:text-white font-sans">
 
     <!-- Top Navbar -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/80 border-b border-slate-800/80">
-        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="font-bold tracking-wider text-blue-400 text-sm md:text-base flex items-center gap-2">
-                <span class="w-3 h-3 rounded-full bg-blue-500 animate-pulse"></span>
-                PASLON 01 • PILKETOS 2026/2027
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-950/90 border-b border-slate-800/80">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+            <div class="font-bold tracking-wider text-blue-400 text-xs sm:text-sm flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-blue-500 animate-pulse"></span>
+                <span class="truncate">PASLON 01</span>
             </div>
-            <nav class="flex gap-4 md:gap-8 text-xs md:text-sm font-medium">
+            <nav class="flex gap-2 sm:gap-6 text-xs sm:text-sm font-medium">
                 <button onclick="switchTab('beranda')" id="nav-beranda" class="transition-colors py-1 text-blue-400 border-b-2 border-blue-400">Beranda</button>
-                <button onclick="switchTab('profil')" id="nav-profil" class="transition-colors py-1 text-slate-400 hover:text-slate-200">Profil Paslon</button>
-                <button onclick="switchTab('visi')" id="nav-visi" class="transition-colors py-1 text-slate-400 hover:text-slate-200">Visi & Misi</button>
+                <button onclick="switchTab('profil')" id="nav-profil" class="transition-colors py-1 text-slate-400 hover:text-slate-200">Profil</button>
+                <button onclick="switchTab('visi')" id="nav-visi" class="transition-colors py-1 text-slate-400 hover:text-slate-200">Visi</button>
+                <button onclick="switchTab('timsus')" id="nav-timsus" class="transition-colors py-1 text-slate-400 hover:text-slate-200">Tim</button>
             </nav>
         </div>
     </header>
@@ -28,27 +51,30 @@
     <main class="flex-1 max-w-5xl w-full mx-auto px-6 py-12">
         
         <!-- TAB 1: BERANDA -->
-        <section id="tab-beranda" class="space-y-16 py-4">
+        <section id="tab-beranda" class="space-y-16 py-4 animate-fade-in-up">
             <div class="text-center space-y-6 max-w-3xl mx-auto">
-                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs px-4 py-2 rounded-full font-bold tracking-wide shadow-lg shadow-blue-500/5">
-                    <span class="text-lg">⭐</span> NOMOR URUT 1 • MASA PERIODE 2026/2027
+                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs px-4 py-2 rounded-full font-bold tracking-wide shadow-lg shadow-blue-500/5 animate-pulse">
+                    <span class="text-lg">⭐</span> NOMOR URUT 1 • PERIODE 2026/2027
                 </div>
-                <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent leading-tight">
+
+                <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent leading-tight animate-float">
                     CALON KETUA DAN WAKIL KETUA OSIS SMA PUSPITA
                 </h1>
-                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl shadow-xl max-w-xl mx-auto">
+
+                <div class="bg-slate-900/80 border border-slate-800 p-6 rounded-2xl shadow-xl max-w-xl mx-auto animate-pulse">
                     <p class="text-blue-400 font-bold text-lg md:text-xl tracking-wide uppercase">
                         Berprestasi Bersama, Berkembang Bersama
                     </p>
                 </div>
-                <p class="text-slate-400 text-base md:text-lg leading-relaxed">
+
+                <p class="text-slate-400 text-sm sm:text-base md:text-lg leading-relaxed">
                     Bersama Muhamad Pasya Komara & Keishya Putri Aurelia, kita wujudkan organisasi OSIS SMA Puspita yang aktif, transparan, dan berprestasi.
                 </p>
                 <div class="pt-2 flex flex-wrap justify-center gap-4">
-                    <button onclick="switchTab('profil')" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-medium transition shadow-lg shadow-blue-600/20 text-sm">
+                    <button onclick="switchTab('profil')" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-xl font-medium transition shadow-lg shadow-blue-600/20 text-sm hover:scale-105">
                         Kenal Lebih Dekat
                     </button>
-                    <button onclick="switchTab('visi')" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-6 py-3 rounded-xl font-medium transition text-sm">
+                    <button onclick="switchTab('visi')" class="bg-slate-900 hover:bg-slate-800 border border-slate-800 text-slate-300 px-6 py-3 rounded-xl font-medium transition text-sm hover:scale-105">
                         Lihat Visi & Misi
                     </button>
                 </div>
@@ -56,17 +82,17 @@
 
             <!-- Quick Highlight Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
-                <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl hover:border-slate-700 transition">
+                <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:border-blue-500/50">
                     <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 font-bold mb-4">01</div>
                     <h3 class="font-semibold text-lg text-slate-100 mb-2">Potensi & Prestasi</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">Mendukung ruang tumbuh bakat akademik dan nonakademik seluruh siswa.</p>
                 </div>
-                <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl hover:border-slate-700 transition">
+                <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:border-blue-500/50">
                     <div class="w-10 h-10 rounded-lg bg-indigo-500/10 flex items-center justify-center text-indigo-400 font-bold mb-4">02</div>
                     <h3 class="font-semibold text-lg text-slate-100 mb-2">Lingkungan Bersih</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">Gerakan bersama menjaga ketertiban, kebersihan, dan kenyamanan fasilitas sekolah.</p>
                 </div>
-                <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl hover:border-slate-700 transition">
+                <div class="bg-slate-900/40 border border-slate-800/80 p-6 rounded-2xl transition-all duration-300 hover:scale-105 hover:border-blue-500/50">
                     <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center text-purple-400 font-bold mb-4">03</div>
                     <h3 class="font-semibold text-lg text-slate-100 mb-2">Transparan & Aspiratif</h3>
                     <p class="text-slate-400 text-sm leading-relaxed">Pengelolaan organisasi yang terbuka dan selalu mendengarkan suara siswa.</p>
@@ -75,19 +101,19 @@
         </section>
 
         <!-- TAB 2: PROFIL PASLON -->
-        <section id="tab-profil" class="space-y-10 max-w-4xl mx-auto py-2 hidden">
+        <section id="tab-profil" class="space-y-10 max-w-4xl mx-auto py-2 hidden animate-fade-in-up">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl font-bold tracking-tight">Kandidat Pasangan Calon</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight animate-pulse">Kandidat Pasangan Calon</h2>
                 <p class="text-slate-400 text-sm">Siap mengemban amanah memimpin OSIS SMA Puspita.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
                 <!-- Calon Ketua -->
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-xl relative overflow-hidden text-center">
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-xl relative overflow-hidden text-center transition-all duration-300 hover:scale-105 hover:border-blue-500/50">
                     <div class="absolute top-4 right-4 bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30">
                         NOMOR 01
                     </div>
-                    <div class="w-24 h-24 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-full mx-auto flex items-center justify-center text-3xl font-extrabold shadow-lg shadow-blue-500/20 text-white">
+                    <div class="w-24 h-24 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-full mx-auto flex items-center justify-center text-3xl font-extrabold shadow-lg shadow-blue-500/20 text-white animate-float">
                         MP
                     </div>
                     <div>
@@ -100,11 +126,11 @@
                 </div>
 
                 <!-- Calon Wakil -->
-                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-xl relative overflow-hidden text-center">
+                <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-3xl space-y-4 shadow-xl relative overflow-hidden text-center transition-all duration-300 hover:scale-105 hover:border-blue-500/50">
                     <div class="absolute top-4 right-4 bg-indigo-500/20 text-indigo-400 text-xs font-bold px-3 py-1 rounded-full border border-indigo-500/30">
                         NOMOR 01
                     </div>
-                    <div class="w-24 h-24 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full mx-auto flex items-center justify-center text-3xl font-extrabold shadow-lg shadow-indigo-500/20 text-white">
+                    <div class="w-24 h-24 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full mx-auto flex items-center justify-center text-3xl font-extrabold shadow-lg shadow-indigo-500/20 text-white animate-float">
                         KP
                     </div>
                     <div>
@@ -119,23 +145,23 @@
         </section>
 
         <!-- TAB 3: VISI & MISI -->
-        <section id="tab-visi" class="space-y-10 max-w-3xl mx-auto py-2 hidden">
+        <section id="tab-visi" class="space-y-10 max-w-3xl mx-auto py-2 hidden animate-fade-in-up">
             <div class="text-center space-y-2">
-                <h2 class="text-3xl font-bold tracking-tight">Visi & Misi Paslon 01</h2>
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight animate-pulse">Visi & Misi Paslon 01</h2>
                 <p class="text-slate-400 text-sm">Landasan kerja nyata untuk periode kepengurusan mendatang.</p>
             </div>
 
             <!-- Visi -->
-            <div class="bg-gradient-to-br from-slate-900 to-slate-900/80 border border-slate-800 p-8 rounded-2xl shadow-xl relative overflow-hidden">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-900/80 border border-slate-800 p-8 rounded-2xl shadow-xl relative overflow-hidden transition-all duration-300 hover:scale-[1.02]">
                 <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 rounded-full blur-2xl pointer-events-none"></div>
                 <h3 class="text-xs font-bold tracking-wider text-blue-400 uppercase mb-3">Visi Paslon</h3>
-                <p class="text-slate-100 text-lg md:text-xl font-medium leading-relaxed italic">
+                <p class="text-slate-100 text-base md:text-xl font-medium leading-relaxed italic">
                     &ldquo;Mewujudkan OSIS sebagai wadah pengembangan potensi, prestasi, dan partisipasi siswa melalui organisasi yang bertanggung jawab serta lingkungan sekolah yang tertib, bersih, dan nyaman.&rdquo;
                 </p>
             </div>
 
             <!-- Misi -->
-            <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl shadow-xl space-y-6">
+            <div class="bg-slate-900/60 border border-slate-800 p-8 rounded-2xl shadow-xl space-y-6 transition-all duration-300 hover:scale-[1.02]">
                 <h3 class="text-xs font-bold tracking-wider text-blue-400 uppercase">Misi Paslon</h3>
                 <ol class="space-y-4 text-slate-300 list-decimal list-inside leading-relaxed text-sm md:text-base">
                     <li class="pl-2">
@@ -157,11 +183,63 @@
             </div>
         </section>
 
+        <!-- TAB 4: TIM SUKSES -->
+        <section id="tab-timsus" class="space-y-10 max-w-4xl mx-auto py-2 hidden animate-fade-in-up">
+            <div class="text-center space-y-2">
+                <h2 class="text-2xl sm:text-3xl font-bold tracking-tight animate-pulse">Tim Sukses Paslon 01</h2>
+                <p class="text-slate-400 text-sm">Perwakilan penggerak pemenangan dari setiap angkatan.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4">
+                <!-- Perwakilan Kelas 12 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl text-center space-y-3 shadow-xl transition-all duration-300 hover:scale-105 hover:border-blue-500/50">
+                    <div class="w-16 h-16 bg-blue-500/10 text-blue-400 font-bold text-xl rounded-full mx-auto flex items-center justify-center border border-blue-500/20">
+                        12
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-100 text-lg">Ahmad Fauzan</h3>
+                        <p class="text-blue-400 text-xs font-semibold uppercase mt-0.5">Koordinator Kelas 12</p>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Mengkoordinasikan strategi pemenangan dan dukungan penuh dari tingkat kelas akhir.
+                    </p>
+                </div>
+
+                <!-- Perwakilan Kelas 11 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl text-center space-y-3 shadow-xl transition-all duration-300 hover:scale-105 hover:border-indigo-500/50">
+                    <div class="w-16 h-16 bg-indigo-500/10 text-indigo-400 font-bold text-xl rounded-full mx-auto flex items-center justify-center border border-indigo-500/20">
+                        11
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-100 text-lg">Siti Rahma</h3>
+                        <p class="text-indigo-400 text-xs font-semibold uppercase mt-0.5">Koordinator Kelas 11</p>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Menghubungkan aspirasi siswa kelas 11 serta memperluas jaringan dukungan kreatif.
+                    </p>
+                </div>
+
+                <!-- Perwakilan Kelas 10 -->
+                <div class="bg-slate-900/60 border border-slate-800 p-6 rounded-2xl text-center space-y-3 shadow-xl transition-all duration-300 hover:scale-105 hover:border-purple-500/50">
+                    <div class="w-16 h-16 bg-purple-500/10 text-purple-400 font-bold text-xl rounded-full mx-auto flex items-center justify-center border border-purple-500/20">
+                        10
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-slate-100 text-lg">Rizky Pratama</h3>
+                        <p class="text-purple-400 text-xs font-semibold uppercase mt-0.5">Koordinator Kelas 10</p>
+                    </div>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Menggalang partisipasi aktif dan sosialisasi program paslon kepada siswa baru kelas 10.
+                    </p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-slate-800/80 py-6 text-center text-slate-500 text-xs mt-12">
-        <p>&copy; <span id="year"></span> Paslon 01 • Muhamad Pasya Komara (Ketua) & Keishya Putri Aurelia (Wakil). SMA Puspita Kota Tangerang.</p>
+    <footer class="border-t border-slate-800/80 py-6 text-center text-slate-500 text-xs mt-12 px-4">
+        <p>&copy; <span id="year"></span> Paslon 01 • Muhamad Pasya Komara & Keishya Putri Aurelia. SMA Puspita Kota Tangerang.</p>
     </footer>
 
     <!-- Script Interaksi -->
@@ -169,7 +247,7 @@
         document.getElementById('year').textContent = new Date().getFullYear();
 
         function switchTab(tabId) {
-            const tabs = ['beranda', 'profil', 'visi'];
+            const tabs = ['beranda', 'profil', 'visi', 'timsus'];
             tabs.forEach(t => {
                 document.getElementById('tab-' + t).classList.add('hidden');
                 const navBtn = document.getElementById('nav-' + t);
